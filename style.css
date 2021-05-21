@@ -1,5 +1,9 @@
 body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #222f3e;
+  height: 100vh;
 }
 
 h1 {
@@ -9,7 +13,6 @@ h1 {
 
 .card-list {
   display: flex;
-  
   flex-wrap: wrap;
   margin: auto;
   width: 350px;
