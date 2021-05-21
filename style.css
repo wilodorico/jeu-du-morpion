@@ -1,3 +1,29 @@
 body {
   background-color: #222f3e;
 }
+
+h1 {
+  color: aliceblue;
+  text-align: center;
+}
+
+.card-list {
+  display: flex;
+  
+  flex-wrap: wrap;
+  margin: auto;
+  width: 350px;
+  
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 100px;
+  background-color: #00d2d3;
+  border: 1px solid #222f3e;
+  cursor: pointer;
+  font-size: 3rem;
+}
