@@ -6,10 +6,11 @@ body {
   height: 100vh;
 }
 
-h1 {
+h1, p {
   color: aliceblue;
   text-align: center;
 }
+
 
 .card-list {
   display: flex;
