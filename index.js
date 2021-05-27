@@ -34,9 +34,9 @@ const clickEvent = (item) => {
     item.innerHTML = activPlayer;
     item.style.color = activPlayer === "X" ? "red" : "orange";
     tableGame[item.dataset.id] = activPlayer;
-    
+
     console.log("tableGame :>> ", tableGame);
-    
+
     for (let index of combiWin) {
       let val1 = tableGame[index[0]];
       let val2 = tableGame[index[1]];
@@ -44,7 +44,7 @@ const clickEvent = (item) => {
       if (val1 === "" || val2 === "" || val3 === "") {
         continue;
       }
-  
+
       if (val1 === val2 && val2 === val3) {
         message.innerHTML = `Le joueur ${activPlayer} a gagné !`;
         win = true;
@@ -52,12 +52,13 @@ const clickEvent = (item) => {
         return;
       }
     }
-    if(!tableGame.includes("")){
-      message.innerHTML = "Vous êtes à égalité recommencer"
+    if (!tableGame.includes("")) {
+      message.innerHTML = "Vous êtes à égalité recommencer";
       win = false;
+      btnRestart.style.display = "flex";
       return;
     }
-    
+
     activPlayer = activPlayer === "X" ? "O" : "X";
     message.innerHTML = `Au joueur ${activPlayer} de jouer`;
   }
