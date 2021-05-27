@@ -1,10 +1,10 @@
 const game = document.querySelector(".game");
 const cardList = document.querySelectorAll(".card");
-const message = document.querySelector('.message')
+const message = document.querySelector(".message");
 const playerOne = "O";
 const playerTwo = "X";
 let gagne = false;
-let isCheck = false;
+let activPlayer = "X";
 const tableGame = ["", "", "", "", "", "", "", "", ""];
 const combiWin = [
   [0, 1, 2],
@@ -20,16 +20,12 @@ const combiWin = [
 for (const item of cardList) {
   item.addEventListener("click", (e) => {
     if (item.innerText === "") {
-      isCheck ? (isCheck = false) : (isCheck = true);
+      activPlayer = activPlayer === "X" ? "O" : "X";
     }
-    
-    isCheck
-      ? ((item.innerHTML = playerTwo),
-        (item.style.color = "red"),
-        (tableGame[item.dataset.id] = playerTwo))
-      : ((item.innerHTML = playerOne),
-        (item.style.color = "orange"),
-        (tableGame[item.dataset.id] = playerOne));
+    item.innerHTML = activPlayer;
+    item.style.color = activPlayer === "X" ? "red" : "orange";
+    tableGame[item.dataset.id] = activPlayer;
+
     console.log("tableGame :>> ", tableGame);
 
     for (let index of combiWin) {
@@ -40,10 +36,9 @@ for (const item of cardList) {
         continue;
       }
       if (val1 === val2 && val2 === val3) {
-        val1 === "X" ? 
-        (message.innerHTML = `Le joueur ${playerTwo} a gagné !`)
-        : 
-        (message.innerHTML = `Le joueur ${playerOne} a gagné !`)
+        val1 === "X"
+          ? (message.innerHTML = `Le joueur ${playerTwo} a gagné !`)
+          : (message.innerHTML = `Le joueur ${playerOne} a gagné !`);
         gagne = true;
       }
     }
