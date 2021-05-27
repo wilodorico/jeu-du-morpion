@@ -16,7 +16,6 @@ const combiWin = [
   [6, 7, 8],
 ];
 
-
 const init = () => {
   tableGame = ["", "", "", "", "", "", "", "", ""];
   message.innerHTML = `Au joueur ${activPlayer} de jouer`;
@@ -48,12 +47,12 @@ const clickEvent = (item) => {
     if (val1 === val2 && val2 === val3) {
       message.innerHTML = `Le joueur ${activPlayer} a gagné !`
       win = true;
-      btnRestart.style.display = "block";
+      btnRestart.style.display = "flex";
       return;
     }
   }
     activPlayer = activPlayer === "X" ? "O" : "X";
-    message.innerHTML = activPlayer;
+    message.innerHTML = `Au joueur ${activPlayer} de jouer`;
   }
 };
 
