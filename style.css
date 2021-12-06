@@ -4,6 +4,7 @@ body {
   align-items: center;
   background-color: #222f3e;
   height: 100vh;
+  font-family:  Georgia, 'Times New Roman', Times, serif;
 }
 
 h1, p {
@@ -55,4 +56,8 @@ h1, p {
   border: 1px solid #222f3e;
   cursor: pointer;
   font-size: 3rem;
+}
+
+.message {
+  font-size: 1.2rem;
 }
